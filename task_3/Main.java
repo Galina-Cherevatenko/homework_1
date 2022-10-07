@@ -1,12 +1,12 @@
 package homework_1.task_3;
 import java.util.Scanner;
-public class Main {public static void main(String[] args) {
-    Scanner in = new Scanner(System.in);
+    public class Main {public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
-    int n, f1, f2, F;
+        int n, f1, f2, F;
 
-    System.out.println("Введите n:");
-    n = in.nextInt();
+        System.out.println("Введите n:");
+        n = in.nextInt();
 
 
     int[] arr = new int[n];

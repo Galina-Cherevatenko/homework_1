@@ -2,24 +2,26 @@ package homework_1.task_1;
 import java.util.Scanner;
 public class Main {public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-    double S, R, Dohod;
-    int p, n;
+    double Summa, Profit, Dohod, DohodZagod;
+    int procent, n;
 
     System.out.println("Введите сумму вклада:");
-    S = in.nextDouble();
+    Summa = in.nextDouble();
     System.out.println("Введите процент:");
-    p = in.nextInt();
+    procent = in.nextInt();
     System.out.println("Введите количество лет:");
     n = in.nextInt();
     in.close();
-
-    R = 1;
-    for (int i = 1; i <= n; i++)
-        R = R*(1+(double)p/100);
-
-    Dohod = S*R-S;
-    if (Dohod > 42500)
-        Dohod = 0.87*Dohod;
+    DohodZagod = 0;
+    Dohod = 0;
+    for (int i = 1; i <= n; i++) {
+        Profit = Summa*(1+(double)procent/100);
+        DohodZagod = Profit - Summa;
+        if (DohodZagod > 42500)
+            DohodZagod = DohodZagod - (DohodZagod-42500)*0.13;
+        Summa=Summa+DohodZagod;
+        Dohod=Dohod+DohodZagod;
+    }
 
     System.out.printf("Ваш доход составит: %.2f", Dohod );
 
